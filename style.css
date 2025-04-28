@@ -61,38 +61,86 @@ header .content {
     padding-block: 8px 48px;
   }
 
-  label {
-    position: relative;
-  }
-
-  input {
+  form {
     width: 647px;
     height: 60px;
-    border: 1px solid #fff;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.2em;
-    color: #000;
+    display: inline-flex;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 5px 4px;
 
-    &::placeholder {
-      color: #999999;
+    label {
+      position: relative;
+      width: 330px;
+      height: 52px;
+
+      input {
+        width: 330px;
+        height: 52px;
+        border: none;
+        text-align: center;
+        font-family: var(--primary-font);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.2em;
+        color: #000;
+
+        &::placeholder {
+          color: #999999;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
     }
 
-    &:focus {
-      outline: none;
+    button {
+      width: 139px;
+      height: 52px;
+      background-color: #5373FD;
+      border: none;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-family: var(--secondary-font);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.1em;
+      color: #fff;
+      text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #fff;
+        color: #5373FD;
+        border: 1px solid #5373FD;
+        transition: all 0.3s;
+
+        & svg {
+          [fill=white] {
+            fill: #5373FD;
+          }
+        }
+      }
+
     }
   }
 
   div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
     padding-top: 210px;
 
     a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;
