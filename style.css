@@ -193,6 +193,7 @@ main {
             }
 
             a {
+              font-family: var(--secondary-font);
               font-size: 14px;
               font-weight: 400;
               line-height: 20px;
@@ -275,6 +276,9 @@ main {
   }
 
   .steps {
+    background-image: url(images/line.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50px;
     height: 306px;
     background-color: #333333;
     display: flex;
@@ -291,6 +295,7 @@ main {
         flex-direction: column;
         align-items: center;
         gap: 16px;
+        background-color: #333333;
 
         span {
           font-family: var(--secondary-font);
@@ -634,3 +639,73 @@ footer {
     }
   }
 }
+
+@media (max-width: 890px) {
+  main {
+    .nav {
+      div {
+        height: 136px;
+        padding-inline: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        justify-content: center;
+
+        nav {
+          ul {
+            li {
+              height: unset;
+            }
+          }
+        }
+      }
+    }
+
+    .choice {
+      height: unset;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 32px;
+      padding: 60px 16px;
+
+      .images {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 24px;
+
+        .left {
+          translate: unset;
+        }
+      }
+
+      .content {
+        padding-block: unset;
+        text-align: center;
+      }
+    }
+
+    .steps {
+      height: unset;
+      padding-block: 60px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+      }
+    }
+  }
+
+  .spain {
+    .image {
+      height: 588px;
+
+      .content {
+        width: 720px;
+        height: 348px;
+      }
+    }
+  }
