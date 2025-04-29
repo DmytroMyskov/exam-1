@@ -161,10 +161,10 @@ header .content {
 main {
   .nav {
     div {
+      padding-inline: calc((100vw - 1140px)/2);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 300px;
       height: 84px;
       background-color: #5373FD;
       color: #fff;
@@ -337,7 +337,7 @@ main {
       width: 648px;
       height: 344px;
       background-color: #232323;
-      opacity: 0.9;
+      opacity: 0.7;
       position: absolute;
       bottom: 120px;
       left: 300px;
@@ -346,6 +346,11 @@ main {
       gap: 16px;
       justify-content: center;
       padding: 44px 32px;
+
+      &:hover {
+        opacity: 1;
+        transition: 0.5s;
+      }
 
       b {
         font-size: 20px;
@@ -417,6 +422,10 @@ main {
 
     .content {
       display: flex;
+
+      img {
+        object-fit: cover;
+      }
 
       .text {
         box-sizing: border-box;
@@ -523,6 +532,8 @@ footer {
     }
 
     .steps {
+      background-size: 70%;
+
       ul {
         gap: 180px;
       }
@@ -533,13 +544,13 @@ footer {
         background-image: url(images/spain-1-1370.png);
         height: 712px;
 
-        &:nth-child(1) {
+        &:first-child {
           .content {
             left: 110px;
           }
         }
 
-        &:nth-child(2) {
+        &:last-child {
           background-image: url(images/spain-2-1370.png);
 
           .content {
@@ -596,6 +607,8 @@ footer {
     }
 
     .steps {
+      background-size: 65%;
+
       ul {
         gap: 90px;
       }
@@ -603,13 +616,13 @@ footer {
 
     .spain {
       .image {
-        &:nth-child(1) {
+        &:first-child {
           .content {
             left: 32px;
           }
         }
 
-        &:nth-child(2) {
+        &:last-child {
           .content {
             left: unset;
             right: 32px;
@@ -688,6 +701,8 @@ footer {
     }
 
     .steps {
+      background-image: none;
+      background-size: unset;
       height: unset;
       padding-block: 60px;
 
@@ -697,15 +712,25 @@ footer {
         gap: 60px;
       }
     }
-  }
 
-  .spain {
-    .image {
-      height: 588px;
+    .spain {
+      .image:first-child {
+        height: 588px;
 
-      .content {
-        width: 720px;
-        height: 348px;
+        .content {
+          inset: 120px 24px;
+          width: unset;
+        }
+      }
+
+      .image:last-child {
+        height: 588px;
+
+        .content {
+          inset: 120px 24px;
+          width: unset;
+        }
       }
     }
   }
+}
