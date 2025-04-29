@@ -27,14 +27,13 @@ li {
 }
 
 .container {
-  max-width: 1920px;
   margin: 0 auto;
 }
 
 header {
   background-image: url(images/header-background.png);
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -211,7 +210,7 @@ main {
     padding: 124px 300px;
     background-image: url(images/choice-background.png);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
 
     .content {
@@ -394,7 +393,7 @@ main {
   .tourists {
     background-image: url(images/tourists-background.png);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     height: 680px;
     display: flex;
@@ -411,10 +410,10 @@ main {
       color: #fff;
     }
 
-    div {
+    .content {
       display: flex;
 
-      .content {
+      .text {
         box-sizing: border-box;
         width: 880px;
         height: 280px;
@@ -501,10 +500,6 @@ footer {
 }
 
 @media (max-width: 1370px) {
-  header {
-    background-image: url(images/header-bg-1370.png);
-  }
-
   main {
     .nav {
       div {
@@ -514,11 +509,17 @@ footer {
 
     .choice {
       background-image: url(images/choice-bg-1370.png);
-      gap: 121px;
+      gap: 122px;
       padding: 124px 110px;
 
       .left {
         translate: -110px 0;
+      }
+    }
+
+    .steps {
+      ul {
+        gap: 180px;
       }
     }
 
@@ -550,20 +551,84 @@ footer {
     }
 
     .tourists {
-      height: 708px;
-      background-image: url(images/tourists-bg-1370.png);
+      .content {
+        padding-inline: 110px;
 
-      div {
-        width: 1140px;
-
-        img {
-          width: 380px;
-          height: 308px;
+        picture {
+          img {
+            width: 100%;
+            height: 308px;
+          }
         }
 
-        .content {
-          width: 760px;
+        .text {
+          width: 740px;
           height: 308px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  main {
+    .nav {
+      div {
+        padding-inline: 32px;
+      }
+    }
+
+    .choice {
+      background-image: url(images/choice-bg-1170.png);
+      gap: 58px;
+      padding: 124px 32px;
+
+      .images {
+        .left {
+          translate: -32px 0;
+        }
+      }
+    }
+
+    .steps {
+      ul {
+        gap: 90px;
+      }
+    }
+
+    .spain {
+      .image {
+        &:nth-child(1) {
+          .content {
+            left: 32px;
+          }
+        }
+
+        &:nth-child(2) {
+          .content {
+            left: unset;
+            right: 32px;
+          }
+        }
+      }
+    }
+
+    .tourists {
+      height: 736px;
+
+      .content {
+        padding-inline: 32px;
+
+        picture {
+          img {
+            width: 100%;
+            height: 336px;
+          }
+        }
+
+        .text {
+          width: 640px;
+          height: 336px;
         }
       }
     }
