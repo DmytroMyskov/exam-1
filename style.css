@@ -269,8 +269,8 @@ main {
       flex-direction: column;
       gap: 16px;
 
-      .right {
-        translate: 74px 0;
+      .left {
+        translate: -74px 0;
       }
     }
   }
@@ -494,6 +494,76 @@ footer {
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1370px) {
+  header {
+    background-image: url(images/header-bg-1370.png);
+  }
+
+  main {
+    .nav {
+      div {
+        padding-inline: 110px;
+      }
+    }
+
+    .choice {
+      background-image: url(images/choice-bg-1370.png);
+      gap: 121px;
+      padding: 124px 110px;
+
+      .left {
+        translate: -110px 0;
+      }
+    }
+
+    .spain {
+      .image {
+        background-image: url(images/spain-1-1370.png);
+        height: 712px;
+
+        &:nth-child(1) {
+          .content {
+            left: 110px;
+          }
+        }
+
+        &:nth-child(2) {
+          background-image: url(images/spain-2-1370.png);
+
+          .content {
+            left: unset;
+            right: 110px;
+          }
+        }
+      }
+
+      .content {
+        width: 558px;
+        height: 372px;
+      }
+    }
+
+    .tourists {
+      height: 708px;
+      background-image: url(images/tourists-bg-1370.png);
+
+      div {
+        width: 1140px;
+
+        img {
+          width: 380px;
+          height: 308px;
+        }
+
+        .content {
+          width: 760px;
+          height: 308px;
         }
       }
     }

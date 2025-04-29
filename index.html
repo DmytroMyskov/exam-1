@@ -86,8 +86,8 @@
         </div>
 
         <div class="images">
-          <img src="images/choice-1.png" alt="a house near water">
-          <img class="right" src="images/choice-2.png" alt="mountains">
+          <img class="left" src="images/choice-1.png" alt="a house near water">
+          <img src="images/choice-2.png" alt="mountains">
         </div>
       </section>
 
@@ -156,7 +156,11 @@
         <h2>What Our Tourists Say</h2>
 
         <div>
-          <img src="images/tourists.png" alt="man with a backpack">
+          <picture>
+            <source media="(max-width: 1920px)" srcset="images/tourists.png">
+            <source media="(max-width: 1370px)" srcset="..images/tourists-1370.jpg">
+            <img src="images/tourists.png" alt="man with a backpack">
+          </picture>
 
           <div class="content">
             <h3>Sam Sumon</h3>
