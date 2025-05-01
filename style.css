@@ -202,215 +202,75 @@ main {
           }
         }
       }
-    }
-  }
 
-  .choice {
-    display: flex;
-    gap: 136px;
-    padding: 124px 300px;
-    background-image: url(images/choice-background.png);
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-
-    .content {
-      padding-block: 66px;
-
-      h2 {
-        font-family: var(--secondary-font);
-        font-size: 36px;
-        font-weight: 400;
-        line-height: 40px;
-        color: #fff;
-      }
-
-      .text {
-        padding-block: 24px 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 28px;
-        color: #fff;
-        letter-spacing: 0.1em;
-      }
-
-      button {
-        width: 213px;
-        height: 60px;
-        background-color: #5373FD;
-        border: none;
-        font-family: var(--secondary-font);
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        color: #fff;
-        /* background: linear-gradient(#486BFE 0%, #486BFE 40%, #5373FD 100%);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-
-        &:hover {
-          background-color: #fff;
-          color: #5373FD;
-          cursor: pointer;
-          transition: all 0.3s ease-in-out;
-        }
-      }
-    }
-
-    .images {
-      box-sizing: border-box;
-      width: 424px;
-      height: 456px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-
-      .left {
-        translate: -74px 0;
-      }
-    }
-  }
-
-  .steps {
-    background-image: url(images/line.svg);
-    background-repeat: no-repeat;
-    background-position: 50% 50px;
-    height: 306px;
-    background-color: #333333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    ul {
-      display: flex;
-      align-items: center;
-      gap: 205px;
-
-      li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        background-color: #333333;
+      .burger {
+        display: none;
+        width: 40px;
+        height: 24px;
+        background-color: transparent;
+        transition: filter 0.3s;
 
         span {
-          font-family: var(--secondary-font);
-          font-size: 36px;
-          font-weight: 400;
-          line-height: 40px;
-          color: #fff;
+          display: block;
+          width: 40px;
+          height: 2px;
+          background-color: white;
+          translate: 0 1px;
+          transition: rotate 0.5s, translate 0.5s;
+
+          &:nth-child(2) {
+            translate: 0 9px;
+          }
+
+          &:nth-child(3) {
+            translate: 0 18px;
+          }
         }
-
-        svg {
-          width: 64px;
-          height: 64px;
-        }
-      }
-    }
-  }
-
-  .spain {
-    .image {
-      background-image: url(images/spain-1.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 684px;
-      position: relative;
-
-      &:nth-child(2) {
-        background-image: url(images/spain-2.png);
-
-        .content {
-          left: unset;
-          right: 300px;
-        }
-      }
-    }
-
-    .content {
-      box-sizing: border-box;
-      width: 648px;
-      height: 344px;
-      background-color: #232323;
-      opacity: 0.7;
-      position: absolute;
-      bottom: 120px;
-      left: 300px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      justify-content: center;
-      padding: 44px 32px;
-
-      &:hover {
-        opacity: 1;
-        transition: 0.5s;
-      }
-
-      b {
-        font-size: 20px;
-        font-weight: 300;
-        line-height: 28px;
-        letter-spacing: 0.1em;
-        color: #fff;
-      }
-
-      h3 {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 28px;
-        color: #fff;
-        text-transform: uppercase;
-      }
-
-      p {
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 28px;
-        color: #fff;
-        letter-spacing: 0.1em;
-      }
-
-      button {
-        margin-top: 8px;
-        width: 213px;
-        height: 60px;
-        background-color: #5373FD;
-        border: none;
-        font-family: var(--secondary-font);
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        color: #fff;
 
         &:hover {
-          background-color: #fff;
-          color: #5373FD;
           cursor: pointer;
-          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      #burger {
+        display: none;
+
+        &:checked~.burger {
+          span {
+            background-color: #fff;
+
+            &:nth-child(1) {
+              rotate: 45deg;
+              translate: 0 8px;
+            }
+
+            &:nth-child(2) {
+              opacity: 0;
+            }
+
+            &:nth-child(3) {
+              rotate: -45deg;
+              translate: 0 3px;
+            }
+          }
         }
       }
     }
   }
+}
 
-  .tourists {
-    background-image: url(images/tourists-background.png);
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    height: 680px;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    justify-content: center;
-    align-items: center;
+.choice {
+  display: flex;
+  gap: 136px;
+  padding-inline: calc((100vw - 1140px)/2);
+  padding-block: 124px;
+  background-image: url(images/choice-background.png);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  .content {
+    padding-block: 66px;
 
     h2 {
       font-family: var(--secondary-font);
@@ -420,38 +280,232 @@ main {
       color: #fff;
     }
 
-    .content {
+    .text {
+      padding-block: 24px 32px;
       display: flex;
+      flex-direction: column;
+      gap: 24px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      color: #fff;
+      letter-spacing: 0.1em;
+    }
 
-      img {
-        object-fit: cover;
+    button {
+      width: 213px;
+      height: 60px;
+      background-color: #5373FD;
+      border: none;
+      font-family: var(--secondary-font);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(45deg, #486BFE 42%, #5373FD 42%);
+
+      &:hover {
+        background: #fff;
+        color: #5373FD;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .images {
+    box-sizing: border-box;
+    width: 424px;
+    height: 456px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .left {
+      translate: -74px 0;
+    }
+  }
+}
+
+.steps {
+  background-image: url(images/line.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50px;
+  height: 306px;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 205px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      background-color: #333333;
+
+      span {
+        font-family: var(--secondary-font);
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 40px;
+        color: #fff;
       }
 
-      .text {
-        box-sizing: border-box;
-        width: 880px;
-        height: 280px;
-        background-color: #333333;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        justify-content: center;
-        padding: 48px 60px;
+      svg {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+}
 
-        h3 {
-          font-size: 20px;
-          font-weight: 400;
-          line-height: 28px;
-          color: #fff;
-        }
+.spain {
+  .image {
+    background-image: url(images/spain-1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 684px;
+    position: relative;
 
-        p {
-          font-size: 16px;
-          font-weight: 300;
-          line-height: 28px;
-          color: #fff;
-          letter-spacing: 0.1em;
-        }
+    &:nth-child(2) {
+      background-image: url(images/spain-2.png);
+
+      .content {
+        left: unset;
+        right: 300px;
+      }
+    }
+  }
+
+  .content {
+    box-sizing: border-box;
+    width: 648px;
+    height: 344px;
+    background-color: #232323;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 120px;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    padding: 44px 32px;
+
+    &:hover {
+      opacity: 1;
+      transition: 0.5s;
+    }
+
+    b {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 28px;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 28px;
+      color: #fff;
+      letter-spacing: 0.1em;
+    }
+
+    button {
+      margin-top: 8px;
+      width: 213px;
+      height: 60px;
+      background-color: #5373FD;
+      border: none;
+      font-family: var(--secondary-font);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(45deg, #486BFE 42%, #5373FD 42%);
+
+      &:hover {
+        background: #fff;
+        color: #5373FD;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.tourists {
+  background-image: url(images/tourists-background.png);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-family: var(--secondary-font);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    color: #fff;
+  }
+
+  .content {
+    display: flex;
+
+    img {
+      object-fit: cover;
+    }
+
+    .text {
+      box-sizing: border-box;
+      width: 880px;
+      height: 280px;
+      background-color: #333333;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      padding: 48px 60px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        color: #fff;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 28px;
+        color: #fff;
+        letter-spacing: 0.1em;
       }
     }
   }
@@ -720,6 +774,7 @@ footer {
         .content {
           inset: 120px 24px;
           width: unset;
+          height: 348px;
         }
       }
 
@@ -729,8 +784,118 @@ footer {
         .content {
           inset: 120px 24px;
           width: unset;
+          height: 348px;
+        }
+      }
+    }
+
+    .tourists {
+      height: 924px;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 24px;
+
+        .text {
+          width: unset;
+          height: unset;
         }
       }
     }
   }
 }
+
+@media (max-width: 770px) {
+  header .content {
+    form {
+      width: 500px;
+    }
+  }
+
+  main {
+    .nav {
+      position: relative;
+
+      div {
+        height: 84px;
+        padding-right: 18px;
+        display: flex;
+        flex-direction: row;
+        padding-inline: 18px;
+
+        :not(:checked)+nav {
+          display: none;
+        }
+
+        a {
+          z-index: 1;
+        }
+
+        nav {
+          position: absolute;
+          width: 100%;
+          height: 216px;
+          top: 84px;
+          left: 0;
+          background-color: #5373FD;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+
+            & li:hover {
+              border-bottom: unset;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .burger {
+          display: block;
+        }
+      }
+    }
+
+    .choice {
+      .images {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+      }
+    }
+
+    .spain {
+      .image:first-child {
+        height: 616px;
+
+        .content {
+          height: 376px;
+        }
+      }
+
+      .image:last-child {
+        height: 616px;
+
+        .content {
+          height: 376px;
+        }
+      }
+    }
+
+    .tourists {
+      height: 980px;
+
+      .content {
+        .text {
+          width: unset;
+        }
+      }
+    }
+  }
